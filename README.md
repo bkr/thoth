@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ### Basics
 
-The default `Thoth.logger` will write to `log/events.log` and include `time`.  It will also populate `context` with the current `params` and `current_user.id` if `current_user` is defined.
+The default `Thoth.logger` will write to `log/events_#{Rails.env}.log` and include `time`.  It will also populate `context` with the current `params` and `current_user.id` if `current_user` is defined.
 
 ```ruby
 Thoth.logger.log(:ship_notice, previous_state: :processing, next_state: :shipped)
