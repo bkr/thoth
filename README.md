@@ -32,6 +32,20 @@ Thoth.logger.log(:ship_notice, {context: { source: :api }}, state: :shipped)
 # {"event":"ship_notice","time":"25/Sep/2014:01:02:25 +0000","context":{"controller":"shipments","action":"create","current_user":1,source:'api'},"details":{state:'shipped'}}
 ```
 
+### Logging changes to a model
+
+Include `Thoth::Rails::Model` on your model and declare `log_events`.
+
+```ruby
+class Cat < ActiveRecord::Base
+  include Thoth::Rails::Model
+
+  # :on (default [:create, :update, :destroy]) - which events should be logged
+  # :only (default all attributes) - for updates, only log when these attributes are changed
+  log_events on: [:update, :destroy], only: [:mood, :name]
+end
+```
+
 ### Changing default context
 
 If you'd like to change what is included in the context in requests, you can overwrite the `thoth_request_context` method in your controllers.
