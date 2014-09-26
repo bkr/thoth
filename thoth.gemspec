@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Philippe Huibonhoa"]
   spec.email         = ["phuibonhoa@gmail.com"]
   spec.summary       = %q{Easy event logging for rails.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/bkr/thoth"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
