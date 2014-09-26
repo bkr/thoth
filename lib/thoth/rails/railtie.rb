@@ -1,4 +1,5 @@
 require 'thoth/rails/controller_context'
+require 'thoth/rails/model'
 
 module Thoth
   class Railtie < ::Rails::Railtie
