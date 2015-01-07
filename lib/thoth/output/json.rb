@@ -7,7 +7,7 @@ module Thoth
       end
 
       def write(hash)
-        @io.write("#{ActiveSupport::JSON.encode(hash)}\n")
+        @io.write("#{JSON.dump(hash)}\n")
       end
     end
   end
