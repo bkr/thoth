@@ -23,18 +23,21 @@ module Thoth
     end
 
     def thoth_log_create
+      return unless self.class.thoth_options[:on].include?(:create)
       thoth_log_model(:create)
     end
 
     def thoth_log_update
-      only_options = self.class.thoth_options[:only]
+      return unless self.class.thoth_options[:on].include?(:update)
 
+      only_options = self.class.thoth_options[:only]
       if only_options.empty? || !(only_options.map(&:to_s) & changes.keys).empty?
         thoth_log_model(:update)
       end
     end
 
     def thoth_log_destroy
+      return unless self.class.thoth_options[:on].include?(:destroy)
       thoth_log_model(:destroy)
     end
 

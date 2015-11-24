@@ -29,7 +29,6 @@ describe Thoth::Rails::Model do
         Cat.create!
       end
     end
-
   end
 
   context "on destroy" do
@@ -101,5 +100,4 @@ describe Thoth::Rails::Model do
       end
     end
   end
-
 end
