@@ -13,7 +13,7 @@ module Thoth
       end
 
       def thoth_request_context
-        context = params.dup
+        context = params.to_h
         context[:current_user] = current_user.try(:id) if defined?(current_user)
         context
       end
